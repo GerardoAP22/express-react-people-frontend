@@ -35,7 +35,7 @@ function Main(props) {
     };
 
     const updatePeople = async (person, id) => {
-        await fetch(API_URL + id, {
+        await fetch(API_URL + '/' + person._id, {
           method: 'PUT',
           headers: {
             'Content-Type': 'Application/json',
@@ -47,7 +47,7 @@ function Main(props) {
     };
 
     const deletePeople = async (id) => {
-        await fetch(API_URL + id, {
+        await fetch(API_URL + '/' + id, {
         method: 'DELETE',
         });
         getPeople();
